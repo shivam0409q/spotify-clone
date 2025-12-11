@@ -2,21 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="x-UA-Compatible" content="ie-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.css" integrity="sha512-LKG0Zi6duJ5mwncLtQVchN0iF8fWmcxApuX9pqGq7ITgwQDWR9EqZFsrV9TXfE9pPRa1J6GVnsBl7gKxAyllaA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="./assets/logo.png">
-    <title>spotify-web Player: Music for everyone</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="main">
-        <div class="sidebar">sidebar</div>
-        <div class="main-content">main-content</div>
-        <div class="music-player">music-player</div>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">Spotify Clone</div>
+            <nav>
+                <ul>
+                    <li><a href="#" id="home-link">Home</a></li>
+                    <li><a href="#" id="search-link">Search</a></li>
+                    <li><a href="#" id="library-link">Your Library</a></li>
+                </ul>
+            </nav>
+            <div class="playlists">
+                <h3>Playlists</h3>
+                <ul>
+                    <li><a href="#" class="playlist-link" data-playlist="liked">Liked Songs</a></li>
+                    <li><a href="#" class="playlist-link" data-playlist="recent">Recently Played</a></li>
+                    <li><a href="#" class="playlist-link" data-playlist="discover">Discover Weekly</a></li>
+                </ul>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <input type="text" id="search-input" placeholder="Search for songs, artists...">
+            </header>
+            <section class="song-list" id="song-list">
+                <!-- Songs will be populated here -->
+            </section>
+        </main>
     </div>
+    <footer class="player">
+        <div class="current-song">
+            <img id="current-art" src="" alt="Album Art">
+            <div class="song-info">
+                <h4 id="current-title">Select a song</h4>
+                <p id="current-artist"></p>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="prev-btn">⏮</button>
+            <button id="play-btn">▶</button>
+            <button id="next-btn">⏭</button>
+        </div>
+        <div class="progress-container">
+            <span id="current-time">0:00</span>
+            <input type="range" id="progress-bar" min="0" max="100" value="0">
+            <span id="duration">0:00</span>
+        </div>
+        <div class="volume">
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+    </footer>
+    <audio id="audio-player"></audio>
+    <script src="script.js"></script>
 </body>
 </html>
